@@ -169,10 +169,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-03-04 22:06:05 / Modified: 22:41:20" itemprop="dateCreated datePublished" datetime="2020-03-04T22:06:05+08:00">2020-03-04</time>
+              <time title="Created: 2020-03-04 22:06:05" itemprop="dateCreated datePublished" datetime="2020-03-04T22:06:05+08:00">2020-03-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-05 00:05:35" itemprop="dateModified" datetime="2020-03-05T00:05:35+08:00">2020-03-05</time>
+              </span>
 
           
 
@@ -185,14 +191,130 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##为什么要建立独立博客？</p>
-<p>1、不喜欢微信公众号、简书的喧嚣，不喜欢在微信朋友圈发个链接，然后等待别人去点赞认可的虚荣感，好像你所写的内容的所有价值都是来自别人的点赞数。</p>
+          <h2 id="一、为什么要建立独立博客？"><a href="#一、为什么要建立独立博客？" class="headerlink" title="一、为什么要建立独立博客？"></a>一、为什么要建立独立博客？</h2><p>1、不喜欢微信公众号、简书的喧嚣，不喜欢在微信朋友圈发个链接，然后等待别人去点赞认可的虚荣感，好像你所写的内容的所有价值都是来自别人的点赞数。</p>
 <p>2、输出倒逼输入，把一件事情用费曼的方式写出来、讲清楚，建立自己对作品的感觉，持续不断地输出作品，不求完美但求完成，因此我希望有一个平台能够承载我的作品，随着时间的流逝，我看着自己在输出作品上的成长，这就是最大的成就感。</p>
 <p>3、大学的C++课程令我痛苦万分，最终61分勉强飘过，至今仍对编程语言有恐惧感，此时此刻的我想挑战一下自己，突破自我的认知，这不过是一门新的语言，并没有那么难，关键是要先掌握一些核心概念和基本常识。</p>
-<p>##自建博客首先要搞清楚哪些概念？</p>
-<p>##关键流程及我的踩坑教训</p>
-<p>##基本操作知识：hexo口令、markdown语法</p>
-<p>##新手建站遇到问题怎么办？</p>
+<h2 id="二、首先要搞清楚哪些概念？"><a href="#二、首先要搞清楚哪些概念？" class="headerlink" title="二、首先要搞清楚哪些概念？"></a>二、首先要搞清楚哪些概念？</h2><p>1、Git是什么？ </p>
+<p>Git是一种分布式的版本管理系统，Linux的创造者Linus写的。 git的作用是对文件进行版本管理，方便在不同版本进行切换修改。即管理你的博客内容。</p>
+<p>2、node.js是什么？</p>
+<p>Node.js是一个服务器端的、非阻断式I/O的、事件驱动的JavaScript运行环境。为后续软件部署提供必要的运行环境。</p>
+<p>3、GitHub是什么？</p>
+<p>GitHub是基于git的代码库托管站，也算是程序员的SMS（以码会友），其中一个主要的开源代码发布或托管站。个人博客的静态网页的内容托管到GitHub上，因此本地通过git更新版本，同步到GitHub后，你的网站的内容就会同步更新。</p>
+<p>4、Hexo是什么？</p>
+<p> Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown语法解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
+<p>5、markdown语法是什么？</p>
+<p> <em>Markdown</em> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。使用markdown可以专注于内容本身，今后的博客主要就是用markdown语法来写作。</p>
+<h2 id="三、关键流程及我的踩坑教训"><a href="#三、关键流程及我的踩坑教训" class="headerlink" title="三、关键流程及我的踩坑教训"></a>三、关键流程及我的踩坑教训</h2><h3 id="1、安装软件"><a href="#1、安装软件" class="headerlink" title="1、安装软件"></a>1、安装软件</h3><p>依次安装Git、node.js，在Windows的软件管理软件中搜索安装即可。</p>
+<h3 id="2、注册GitHub"><a href="#2、注册GitHub" class="headerlink" title="2、注册GitHub"></a>2、注册GitHub</h3><p>（1）到GitHub网站注册账号，uername 最好都用小写，因为最后建立的博客地址是：username.github.io 。</p>
+<p>（2）  在GitHub上创建仓库（Repository），用于托管你在本地git同步上去的内容。Repository name 就是博客地址：username.github.io 。</p>
+<h3 id="3、配置GitHub"><a href="#3、配置GitHub" class="headerlink" title="3、配置GitHub"></a>3、配置GitHub</h3><p>（1）配置SSH keys。  Secure Shell (<strong>SSH</strong>) 是一个允许两台电脑之间通过安全的连接进行数据交换的网络协议。通过加密保证了数据的保密性和完整性 。</p>
+<ul>
+<li><p>首先检查电脑上是否有SSH key ，如果显示“No such file or directory”，说明这是你第一次使用 git 。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;.ssh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>error1：  没有注意空格问题，以上cd后有一个空格，其他地方没有空格，在参照其他教程时，原文中在“/”后加了个空格，导致出现错误提示“too many arguments”   ，所以直接把上面的代码完全复制过去就可以了。</p>
+</blockquote>
+</li>
+<li><p>其次是生成新的SSH key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>此时系统会提示输入密码， Enter passphrase (empty for no passphrase) ，在此是设置密码，以后每次更新博客都要输入密码。注意输入密码时是没有痕迹的。</p>
+</li>
+<li><p>再次添加本地SSH key到GitHub</p>
+<p>在本地文件夹找到id_rsa.pub文件，打开复制全文到GitHub的SSH and GPG keys，标题可随便写。</p>
+</li>
+<li><p>然后测试是否同步成功</p>
+<p>打开Git bash，复制以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>得到以下反馈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &#39;GitHub.com (207.97.227.239)&#39; can&#39;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes&#x2F;no)</span><br></pre></td></tr></table></figure>
+
+<p>输入yes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase for key &#39;&#x2F;c&#x2F;Users&#x2F;lenovo&#x2F;.ssh&#x2F;id_rsa&#39;:</span><br></pre></td></tr></table></figure>
+
+<p>输入设置的密码</p>
+</li>
+<li><p>最后设置用户信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;username&quot;&#x2F;&#x2F;输入注册GitHub时的username</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email &quot;注册邮箱&quot;&#x2F;&#x2F;填写注册邮箱</span><br></pre></td></tr></table></figure>
+
+<p>至此，已经为本地的仓库和GitHub仓库配置了用户权限，可以实现本地和GitHub同步。</p>
+</li>
+</ul>
+<h3 id="4、搭建hexo博客"><a href="#4、搭建hexo博客" class="headerlink" title="4、搭建hexo博客"></a>4、搭建hexo博客</h3><ul>
+<li><p>依次输入代码安装hexo，不可用直接复制两行代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd</span><br><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建博客文件夹，在本地创建与博客网址同名的文件夹(如D：\username.github.io )</p>
+<blockquote>
+<p>error2：第一次参考另一篇教程，建立了一个“myblog”的文件夹，不知道这样有没有影响。</p>
+</blockquote>
+</li>
+<li><p>在博客文件夹下点右键，点击 Git bash here，执行以下指令建立博客文件目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>error3:  部署博客相关的每次命令都要在 D:\username.github.io 目录下操作，即在博客文件夹下点右键  Git bash here，命令才能生效。</p>
+</blockquote>
+</li>
+<li><p>安装依赖包、确保Git部署，依次输入以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install #安装依赖包</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save #确保Git部署</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成静态文件，在本地预览，会提示在浏览器输入localhost:4000 预览页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  error4：第一次一直在git上输入代码，然后输入 hexo g  hexo s，未能得到以上的预览界面。第二天发现原来没有在H:\username.github.io 目录下执行hexo命令，因此是无效的。对于新人，最好在执行hexo 命令前，先关掉git，然后打开D:\username.github.io文件夹，右键 “git bash here”。   </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="5、将博客部署到网站"><a href="#5、将博客部署到网站" class="headerlink" title="5、将博客部署到网站"></a>5、将博客部署到网站</h3><ul>
+<li><p>复制GitHub中Repository 的SSH码，  格式为<a href="mailto:git@github.com">git@github.com</a>:username/username.github.io.git   </p>
+</li>
+<li><p>打开本地博客目录的“_config.yml”【站点配置文件】，把刚刚复制的SSH吗粘贴到最后两行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: git@github.com:username&#x2F;username.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>error5:以上代码的冒号后面要加一个空格符，命令才能生效。markdown的代码也是同样要加空格符。</p>
+</blockquote>
+</li>
+<li><p>完成博客部署，输入下列命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g #生成</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d #部署</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>erroe6：复制代码时不要复制“$”，这是Git上本来有的。代码后面的“#生成”是对这段代码的注释，也不要复制。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="四、基本的hexo指令知识"><a href="#四、基本的hexo指令知识" class="headerlink" title="四、基本的hexo指令知识"></a>四、基本的hexo指令知识</h2><p>1、hexo 口令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init #新建一个网站</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt; #新建一篇文章</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate #生成静态文件，简写为hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish &lt;filename&gt; #发表草稿</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;$ hexo server&#96;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;$ hexo deploy&#96;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存文件 (db.json) 和已生成的静态文件 (public)。在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</span><br></pre></td></tr></table></figure>
+
+<p>总结：hexo new 新建文章，hexo g 生成文章，hexo g本地预览，hexo d正式发布到网站。</p>
+<h2 id="五、新手建站遇到问题怎么办？"><a href="#五、新手建站遇到问题怎么办？" class="headerlink" title="五、新手建站遇到问题怎么办？"></a>五、新手建站遇到问题怎么办？</h2><p>1、阅读官方文档。读网上的任何教程都比不上官方文档，因为这能够让你建立起基础的概念，官方文档是真正面对小白的，而网上的教程并不是。</p>
+<p>2、错误代码提示搜索。直接把出现错误的代码提示复制到Google，常见的是出现error等字眼。可能会出现大量的英文页面，不过不用怕，有大学的英语水平，看技术文档基本是没什么问题的，你要克服的是心理障碍。</p>
+<p>3、成长性思维。我发觉人与人之间的终极差异是思维，拥有成长性思维的人会越来越厉害，他的每一次实践都在增强功力，推荐看《终生成长》，彻底端正了我上半辈子的处事观，在遇到难题的时候不要怕，不懂的正是你学习成长的最佳契机。下面这张图是固定式思维和成长性思维的人在面临挑战时大脑的状态，拥有成长性思维的人面对困难和挑战真的是头脑发热，而固定性思维的人却是头脑发麻，两种状态孰优孰劣可想而知。这张照片我已经打印出来放到桌面上，每天鼓励自己勇于接受挑战、终生成长。</p>
+<p><img src="C:%5CUsers%5C%E6%A2%81%E5%B9%BF%E6%96%87%5CDesktop%5Cgrowth-vs-fixed-mindsets.png" alt="growth-vs-fixed-mindsets"></p>
 
       
     </div>
